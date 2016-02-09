@@ -186,7 +186,11 @@ class Flowdock extends Adapter
           if user.in_flow
             data =
               id: user.id
+              nick: user.nick
               name: user.nick
+              real_name: user.name
+              website: user.website
+              email: user.email
             savedUser = @userFromId user.id, data
             if savedUser.name != data.name
               @changeUserNick(savedUser.id, data.name)
